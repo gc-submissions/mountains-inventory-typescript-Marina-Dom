@@ -5,34 +5,21 @@ interface InventoryItem {
     quantity: number;
 }
 
-// class InventoryItem {
-//     product: Product;
-//     quantity: number;
-
-//     constructor(product: Product, quantity: number){
-//         this.product = product;
-//         this.quantity = quantity;
-//     }
-// }
-
-// let myProduct = new product();
-// console.log(InventoryItem);
-// let myItem(InventoryItem) = new InventoryItem("Motor", 10.00);
-
 let inventory: InventoryItem[] = [
-    {name: "motor", price: 10.00, quantity: 10},
-    {name: "sensor", price: 12.50, quantity: 4},
-    {name: "LED", price: 1.00, quantity: 20},
+    {product: {name: "motor", price: 10.00}, quantity: 10},
+    {product: {name: "sensor", price: 12.50}, quantity: 4},
+    {product: {name: "LED", price: 1.00}, quantity: 20},
 ];
 
-function calcInventoryValue (array: InventoryItem[]){
+export function calcInventoryValue (array: InventoryItem[]): number{
     let total = 0;
 
-    for (const element of array) {
-        total + (element.price * element.quantity);
-    }
+    array.forEach((element) => {
+        let itemPrice = element.product.price;
+        total += itemPrice * element.quantity;
+    });
 
-    return total / array.length;
+    return total;
 }
 
 console.log(calcInventoryValue(inventory));
