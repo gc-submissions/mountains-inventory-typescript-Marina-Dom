@@ -22,8 +22,8 @@ describe("calcAverageProductPrice", () => {
     ]);
     expect(value).toBe(500);
   });
-  // test("zero products", () => {
-  //   const value: number = calcAverageProductPrice([]);
-  //   expect(value).toBe(0);
-  // });
+  test("zero products", () => {
+    const value: number = calcAverageProductPrice([]);
+    expect(value).toBe(0);
+  });
 });
