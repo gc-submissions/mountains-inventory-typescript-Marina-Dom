@@ -3,24 +3,24 @@ import { calcAverageProductPrice } from "../src/products";
 describe("calcAverageProductPrice", () => {
   test("three products", () => {
     const value: number = calcAverageProductPrice([
-      { name: "apples", price: 5 },
-      { name: "oranges", price: 5 },
-      { name: "mangos", price: 11 }
+      { name: "Bike", price: 500 },
+      { name: "Walkie Talkie", price: 60 },
+      { name: "Air Matress", price: 99 }
     ]);
-    expect(value).toBe(7);
+    expect(value).toBe(219.66666666666666);
   });
   test("two products", () => {
     const value: number = calcAverageProductPrice([
-      { name: "greens", price: 3 },
-      { name: "cornbread", price: 4 }
+      { name: "Bike", price: 500 },
+      { name: "Walkie Talkie", price: 60 }
     ]);
-    expect(value).toBe(3.5);
+    expect(value).toBe(280);
   });
   test("one product", () => {
     const value: number = calcAverageProductPrice([
-      { name: "desk", price: 120 }
+      { name: "Bike", price: 500 }
     ]);
-    expect(value).toBe(120);
+    expect(value).toBe(500);
   });
   test("zero products", () => {
     const value: number = calcAverageProductPrice([]);

@@ -7,7 +7,7 @@ describe("findNameOfTallestMountain", () => {
       { name: "Everest", height: 29029 },
       { name: "Denali", height: 20310 }
     ]);
-    expect(name).toBe("Everest");
+    expect(name.name).toBe("Everest");
   });
   test("first mountain", () => {
     const name = findNameOfTallestMountain([
@@ -15,7 +15,7 @@ describe("findNameOfTallestMountain", () => {
       { name: "Kilimanjaro", height: 19341 },
       { name: "Denali", height: 20310 }
     ]);
-    expect(name).toBe("Everest");
+    expect(name.name).toBe("Everest");
   });
   test("last mountain", () => {
     const name = findNameOfTallestMountain([
@@ -23,6 +23,6 @@ describe("findNameOfTallestMountain", () => {
       { name: "Denali", height: 20310 },
       { name: "Everest", height: 29029 }
     ]);
-    expect(name).toBe("Everest");
+    expect(name.name).toBe("Everest");
   });
 });
